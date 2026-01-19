@@ -1,0 +1,125 @@
+site_name: PACS Multi-Systèmes - Documentation Complète
+site_description: Plateforme professionnelle de comparaison DCM4CHEE vs Orthanc avec RT-STRUCT, XNAT et OHIF
+site_author: Meryem Filali Ansari
+site_url: https://analyse-comparative-orthanc-vs-dcm4chee.readthedocs.io
+
+repo_name: meryemfilaliansari/Analyse-Comparative-Orthanc-vs-DCM4CHEE
+repo_url: https://github.com/meryemfilaliansari/Analyse-Comparative-Orthanc-vs-DCM4CHEE-Avec-Int-gration-XNAT-et-Extraction-RT-STRUCT
+
+theme:
+  name: material
+  language: fr
+  palette:
+    # Light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: deep purple
+      toggle:
+        icon: material/brightness-7
+        name: Passer au mode sombre
+    # Dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: deep purple
+      toggle:
+        icon: material/brightness-4
+        name: Passer au mode clair
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.code.annotate
+  icon:
+    repo: fontawesome/brands/github
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/meryemfilaliansari
+    - icon: fontawesome/solid/envelope
+      link: mailto:support@pacs-platform.local
+  version:
+    provider: mike
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - admonition
+  - pymdownx.details
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - attr_list
+  - def_list
+  - tables
+  - footnotes
+  - md_in_html
+  - toc:
+      permalink: true
+
+plugins:
+  - search:
+      lang: fr
+  - minify:
+      minify_html: true
+
+nav:
+  - Accueil: index.md
+  - Démarrage Rapide:
+      - Installation: quickstart/installation.md
+      - Configuration: quickstart/configuration.md
+      - Premier Démarrage: quickstart/first-run.md
+  - Architecture:
+      - Vue d'Ensemble: architecture/overview.md
+      - Microservices: architecture/microservices.md
+      - Base de Données: architecture/database.md
+      - Réseau Docker: architecture/networking.md
+  - Guides Utilisateur:
+      - Dashboard: guides/dashboard.md
+      - Upload DICOM: guides/upload-dicom.md
+      - Visualisation OHIF: guides/ohif-viewer.md
+      - Anonymisation XNAT: guides/xnat-anonymization.md
+      - Comparaison PACS: guides/pacs-comparison.md
+  - Workflow RT-STRUCT:
+      - Introduction: rt-struct/introduction.md
+      - Pipeline Automatisé: rt-struct/pipeline.md
+      - Extraction Contours: rt-struct/extraction.md
+      - Segmentation 3D: rt-struct/segmentation.md
+      - Export Formats: rt-struct/export.md
+  - API Documentation:
+      - Backend FastAPI: api/backend.md
+      - Endpoints REST: api/endpoints.md
+      - RT Services: api/rt-services.md
+      - Authentification: api/authentication.md
+  - Déploiement:
+      - Production: deployment/production.md
+      - HTTPS/SSL: deployment/https.md
+      - Monitoring: deployment/monitoring.md
+      - Backup & Restauration: deployment/backup.md
+  - Performance:
+      - Benchmarks: performance/benchmarks.md
+      - Optimisations: performance/optimizations.md
+      - Scaling: performance/scaling.md
+  - Troubleshooting:
+      - Problèmes Courants: troubleshooting/common-issues.md
+      - Logs & Debug: troubleshooting/logs.md
+      - FAQ: troubleshooting/faq.md
+  - Contribution:
+      - Guide: contributing/guide.md
+      - Standards Code: contributing/standards.md
+      - Tests: contributing/tests.md

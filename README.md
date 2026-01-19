@@ -1,66 +1,57 @@
-# 🏥 PACS Multi-Systèmes - Plateforme Intégrée de Comparaison et d'Analyse Médicale
+# PACS Multi-Systèmes - Plateforme Intégrée de Comparaison et d'Analyse Médicale
 
-[![Docker](https://img.shields.io/badge/Docker-Compose-2496ED?logo=docker)](https://www.docker.com/)
-[![FastAPI](https://img.shields.io/badge/FastAPI-0.115+-009688?logo=fastapi)](https://fastapi.tiangolo.com/)
-[![React](https://img.shields.io/badge/React-18+-61DAFB?logo=react)](https://reactjs.org/)
-[![Python](https://img.shields.io/badge/Python-3.13+-3776AB?logo=python)](https://www.python.org/)
-[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![DICOM](https://img.shields.io/badge/Standard-DICOM-blue)](https://www.dicomstandard.org/)
-[![RT-STRUCT](https://img.shields.io/badge/RT--STRUCT-Support-green)](https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.19.html)
-
-> **Plateforme professionnelle de comparaison et analyse ultra-détaillée entre DCM4CHEE et Orthanc PACS avec support RT-STRUCT, anonymisation XNAT, et visualisation OHIF avancée.**
+> Plateforme professionnelle de comparaison et analyse ultra-détaillée entre DCM4CHEE et Orthanc PACS avec support RT-STRUCT, anonymisation XNAT, et visualisation OHIF avancée.
 
 ---
 
-## 📋 Table des Matières
+## Table des Matières
 
-- [Vue d'Ensemble](#-vue-densemble)
-- [Fonctionnalités Principales](#-fonctionnalités-principales)
-- [Architecture](#-architecture)
-- [Prérequis](#-prérequis)
-- [Installation Rapide](#-installation-rapide)
-- [Configuration](#-configuration)
-- [Utilisation](#-utilisation)
-- [API Documentation](#-api-documentation)
-- [Services et Ports](#-services-et-ports)
-- [Workflow RT-STRUCT](#-workflow-rt-struct)
-- [Performance](#-performance)
-- [Contribution](#-contribution)
-- [License](#-license)
+- [Vue d'Ensemble](#vue-densemble)
+- [Fonctionnalités Principales](#fonctionnalités-principales)
+- [Architecture](#architecture)
+- [Prérequis](#prérequis)
+- [Installation Rapide](#installation-rapide)
+- [Configuration](#configuration)
+- [Utilisation](#utilisation)
+- [API Documentation](#api-documentation)
+- [Services et Ports](#services-et-ports)
+- [Workflow RT-STRUCT](#workflow-rt-struct)
+- [Performance](#performance)
+- [Contribution](#contribution)
 
 ---
 
-## 🎯 Vue d'Ensemble
+## Vue d'Ensemble
 
 Cette plateforme intègre **trois systèmes PACS majeurs** (DCM4CHEE, Orthanc, XNAT) pour offrir :
 
-✅ **Comparaison Performance** : Analyse détaillée des temps de réponse, capacité d'archivage, et fiabilité  
-✅ **Anonymisation RGPD/HIPAA** : Déidentification conforme via XNAT avec audit trail  
-✅ **Workflow RT-STRUCT** : Pipeline automatisé d'extraction, segmentation, et visualisation 3D  
-✅ **Visualisation Avancée** : OHIF Viewer avec mesures, annotations, et reconstructions volumétriques  
-✅ **Monitoring Temps Réel** : Grafana + Prometheus pour métriques et alertes  
+- **Comparaison Performance** : Analyse détaillée des temps de réponse, capacité d'archivage, et fiabilité  
+- **Anonymisation RGPD/HIPAA** : Déidentification conforme via XNAT avec audit trail  
+- **Workflow RT-STRUCT** : Pipeline automatisé d'extraction, segmentation, et visualisation 3D  
+- **Visualisation Avancée** : OHIF Viewer avec mesures, annotations, et reconstructions volumétriques  
+- **Monitoring Temps Réel** : Grafana + Prometheus pour métriques et alertes  
 
-### 🎓 Objectifs du Projet
+### Objectifs du Projet
 
 1. **Comparaison PACS** : Benchmarking DCM4CHEE (archive professionnel) vs Orthanc (PACS léger) pour formation médicale
 2. **Anonymisation** : Protection des données patients (XNAT) conforme RGPD/HIPAA
 3. **Outils Mesure & Annotation** : Interface collaborative avec OHIF pour analyse clinique
 4. **RT-STRUCT Extraction** : Pipeline automatisé pour segmentation radiothérapie (7.4s/étude)
 
-### 📊 Statistiques Clés
+### Statistiques Clés
 
-- 📦 **742 patients** archivés dans les systèmes
-- 💾 **125 GB** de données DICOM
-- ⚡ **95ms** temps de réponse API moyen
-- 🎯 **99.7%** uptime des services
-- 🧪 **87%** couverture de tests
-- 🔄 **15,000** requêtes/jour traitées
+- **742 patients** archivés dans les systèmes
+- **125 GB** de données DICOM
+- **95ms** temps de réponse API moyen
+- **99.7%** uptime des services
+- **87%** couverture de tests
+- **15,000** requêtes/jour traitées
 
 ---
 
-## ✨ Fonctionnalités Principales
+## Fonctionnalités Principales
 
-### 🔄 Synchronisation Multi-PACS
+### Synchronisation Multi-PACS
 
 - **Orchestration intelligente** entre DCM4CHEE et Orthanc
 - **Synchronisation automatique** toutes les 60 secondes
@@ -68,7 +59,7 @@ Cette plateforme intègre **trois systèmes PACS majeurs** (DCM4CHEE, Orthanc, X
 - **Résolution des conflits** avec stratégies configurables
 - **Logs auditables** de toutes les opérations
 
-### 🔐 Anonymisation XNAT
+### Anonymisation XNAT
 
 - **Déidentification complète** : Suppression nom, date naissance, ID patient
 - **Conformité RGPD/HIPAA** : Audit trail et chiffrement
@@ -76,7 +67,7 @@ Cette plateforme intègre **trois systèmes PACS majeurs** (DCM4CHEE, Orthanc, X
 - **Validation DICOM** : Vérification intégrité post-anonymisation
 - **Export sécurisé** : Formats compatibles pour recherche
 
-### 🩻 Workflow RT-STRUCT Automatisé
+### Workflow RT-STRUCT Automatisé
 
 **Pipeline 7 phases** (7.4 secondes total) :
 
@@ -93,7 +84,7 @@ Cette plateforme intègre **trois systèmes PACS majeurs** (DCM4CHEE, Orthanc, X
 - `rt-utils-service` (Port 5001) : Extraction contours
 - `itk-vtk-service` (Port 5002) : Traitement 3D
 
-### 📈 Monitoring & Observabilité
+### Monitoring & Observabilité
 
 - **Prometheus** : Métriques temps réel (CPU, RAM, requêtes/s, latence)
 - **Grafana** : 5 dashboards préconfigurés
@@ -104,19 +95,19 @@ Cette plateforme intègre **trois systèmes PACS majeurs** (DCM4CHEE, Orthanc, X
   - Synchronisation Multi-PACS
 - **Alertes automatiques** : Email/Slack si service down ou latence >500ms
 
-### 🎨 OHIF Viewer - Visualisation Avancée
+### OHIF Viewer - Visualisation Avancée
 
-- ✅ Windowing/Leveling interactif
-- ✅ Mesures : Longueur, angle, ROI, ellipse
-- ✅ Annotations collaboratives sauvegardées
-- ✅ Reconstruction MPR (Multi-Planar)
-- ✅ Rendu volumétrique 3D
-- ✅ Fusion d'images (PET/CT)
-- ✅ Export captures PDF/PNG
+- Windowing/Leveling interactif
+- Mesures : Longueur, angle, ROI, ellipse
+- Annotations collaboratives sauvegardées
+- Reconstruction MPR (Multi-Planar)
+- Rendu volumétrique 3D
+- Fusion d'images (PET/CT)
+- Export captures PDF/PNG
 
 ---
 
-## 🏗️ Architecture
+## Architecture
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
@@ -186,7 +177,7 @@ Cette plateforme intègre **trois systèmes PACS majeurs** (DCM4CHEE, Orthanc, X
 └─────────────────────────────────────────────────────────────┘
 ```
 
-### 🏗️ Diagramme Architecture Microservices
+### Diagramme Architecture Microservices
 
 ```mermaid
 graph TB
@@ -234,7 +225,7 @@ graph TB
     GRAF --> PROM
 ```
 
-### 📂 Structure du Projet
+### Structure du Projet
 
 ```
 pacs/
@@ -265,7 +256,7 @@ pacs/
 
 ---
 
-## ⚙️ Prérequis
+## Prérequis
 
 ### Système Requis
 
@@ -293,16 +284,16 @@ docker run hello-world
 
 ---
 
-## 🚀 Installation Rapide
+## Installation Rapide
 
-### 1️⃣ Cloner le Projet
+### 1. Cloner le Projet
 
 ```bash
 git clone https://github.com/votre-username/pacs-multi-systemes.git
 cd pacs-multi-systemes
 ```
 
-### 2️⃣ Configurer les Variables d'Environnement
+### 2. Configurer les Variables d'Environnement
 
 ```bash
 # Copier le template
@@ -320,7 +311,7 @@ SYNC_INTERVAL=60  # Intervalle synchronisation (secondes)
 LOG_LEVEL=INFO  # Niveau de log (DEBUG|INFO|WARNING|ERROR)
 ```
 
-### 3️⃣ Démarrer les Services
+### 3. Démarrer les Services
 
 ```bash
 # Lancer tous les conteneurs
@@ -346,7 +337,7 @@ prometheus          Up                  0.0.0.0:9090->9090/tcp
 grafana             Up                  0.0.0.0:3001->3000/tcp
 ```
 
-### 4️⃣ Accéder aux Interfaces
+### 4. Accéder aux Interfaces
 
 | Interface | URL | Identifiants par Défaut |
 |-----------|-----|-------------------------|
@@ -361,7 +352,7 @@ grafana             Up                  0.0.0.0:3001->3000/tcp
 
 ---
 
-## 📋 Configuration
+## Configuration
 
 ### Configuration Backend (FastAPI)
 
@@ -413,7 +404,7 @@ OHIF se connecte aux PACS via DICOMweb :
 
 ---
 
-## 🔧 Utilisation
+## Utilisation
 
 ### Synchronisation Multi-PACS
 
@@ -485,7 +476,7 @@ open http://localhost:5173/viewer?StudyInstanceUIDs=1.2.3.4.5
 
 ---
 
-## 📡 API Documentation
+## API Documentation
 
 ### Endpoints Backend
 
@@ -623,7 +614,7 @@ open http://localhost:5173/viewer?StudyInstanceUIDs=1.2.3.4.5
 
 ---
 
-## 📊 Services et Ports
+## Services et Ports
 
 | Service | Port(s) | Protocole | Description |
 |---------|---------|-----------|-------------|
@@ -643,7 +634,7 @@ open http://localhost:5173/viewer?StudyInstanceUIDs=1.2.3.4.5
 
 ---
 
-## 🔄 Workflow RT-STRUCT
+## Workflow RT-STRUCT
   
 - **Identification des différences**: 
   - Images manquantes dans un système
@@ -907,19 +898,19 @@ sequenceDiagram
 
 ---
 
-## ⚡ Performance
+## Performance
 
 ### Benchmarks Comparatifs
 
 | Métrique | DCM4CHEE | Orthanc | Gagnant |
 |----------|----------|---------|---------|
-| **Upload 100 images** | 34.2s | 18.7s | 🏆 Orthanc |
-| **Query 1000 patients** | 523ms | 189ms | 🏆 Orthanc |
-| **Retrieve study (500 MB)** | 12.3s | 15.1s | 🏆 DCM4CHEE |
-| **Peak RAM usage** | 2.8 GB | 1.2 GB | 🏆 Orthanc |
-| **Disk space overhead** | +15% | +5% | 🏆 Orthanc |
-| **Concurrent users (10)** | 95% success | 99% success | 🏆 Orthanc |
-| **Features enterprise** | ⭐⭐⭐⭐⭐ | ⭐⭐⭐ | 🏆 DCM4CHEE |
+| **Upload 100 images** | 34.2s | 18.7s | Orthanc |
+| **Query 1000 patients** | 523ms | 189ms | Orthanc |
+| **Retrieve study (500 MB)** | 12.3s | 15.1s | DCM4CHEE |
+| **Peak RAM usage** | 2.8 GB | 1.2 GB | Orthanc |
+| **Disk space overhead** | +15% | +5% | Orthanc |
+| **Concurrent users (10)** | 95% success | 99% success | Orthanc |
+| **Features enterprise** | 5 étoiles | 3 étoiles | DCM4CHEE |
 
 ### Statistiques Production
 
@@ -934,20 +925,20 @@ sequenceDiagram
 
 ### Optimisations Appliquées
 
-✅ **Backend FastAPI** :
+**Backend FastAPI** :
 - Connection pooling PostgreSQL (max 20 connections)
 - Cache Redis pour métadonnées fréquentes (TTL 5min)
 - Compression GZIP responses >1KB
 - Rate limiting (100 req/min par IP)
 - Async I/O pour DICOM transfers
 
-✅ **Base de Données** :
+**Base de Données** :
 - Index sur `patient_id`, `study_instance_uid`, `series_instance_uid`
 - Partitioning par date sur table `studies`
 - Vacuum automatique PostgreSQL
 - Backup incrémental quotidien
 
-✅ **Docker** :
+**Docker** :
 - Multi-stage builds pour images légères
 - Health checks sur tous services
 - Restart policy `unless-stopped`
@@ -955,7 +946,7 @@ sequenceDiagram
 
 ---
 
-## 🧪 Tests
+## Tests
 
 ### Couverture Tests
 
@@ -974,20 +965,20 @@ pytest --cov=. --cov-report=html
 ### Tests Disponibles
 
 **Tests Unitaires** (23 tests) :
-- ✅ Modèles SQLAlchemy
-- ✅ Validation Pydantic schemas
-- ✅ Utilitaires DICOM parsing
+- Modèles SQLAlchemy
+- Validation Pydantic schemas
+- Utilitaires DICOM parsing
 
 **Tests d'Intégration** (12 tests) :
-- ✅ Synchronisation DCM4CHEE ↔ Orthanc
-- ✅ Anonymisation XNAT
-- ✅ API endpoints (GET, POST, PUT, DELETE)
-- ✅ Workflow RT-STRUCT
+- Synchronisation DCM4CHEE ↔ Orthanc
+- Anonymisation XNAT
+- API endpoints (GET, POST, PUT, DELETE)
+- Workflow RT-STRUCT
 
 **Tests End-to-End** (6 tests) :
-- ✅ Upload DICOM → Visualisation OHIF
-- ✅ Comparaison patient DCM4CHEE vs Orthanc
-- ✅ Pipeline RT-STRUCT complet
+- Upload DICOM → Visualisation OHIF
+- Comparaison patient DCM4CHEE vs Orthanc
+- Pipeline RT-STRUCT complet
 
 ### Exécuter les Tests
 
@@ -1007,7 +998,7 @@ docker compose exec rt-orchestrator python -m pytest tests/
 
 ---
 
-## 🤝 Contribution
+## Contribution
 
 ### Guide de Contribution
 
@@ -1092,11 +1083,11 @@ test(backend): tests unitaires modèle Patient
 
 ---
 
-## 🚨 Troubleshooting
+## Troubleshooting
 
 ### Problèmes Courants
 
-#### ❌ Service ne démarre pas
+#### Service ne démarre pas
 
 ```bash
 # Voir logs détaillés
@@ -1113,7 +1104,7 @@ docker compose build --no-cache backend
 docker compose up -d backend
 ```
 
-#### ❌ Synchronisation échoue
+#### Synchronisation échoue
 
 ```bash
 # Tester connectivité DCM4CHEE
@@ -1130,7 +1121,7 @@ docker compose exec postgres psql -U pacs_user -d pacs_db -c \
 curl -X POST http://localhost:8000/sync
 ```
 
-#### ❌ OHIF ne charge pas les images
+#### OHIF ne charge pas les images
 
 ```bash
 # Vérifier DICOMweb Orthanc
@@ -1144,7 +1135,7 @@ curl http://localhost:8080/dcm4chee-arc/aets/DCM4CHEE/rs/studies
 docker compose restart orthanc
 ```
 
-#### ❌ PostgreSQL connection refused
+#### PostgreSQL connection refused
 
 ```bash
 # Vérifier service up
@@ -1158,7 +1149,7 @@ docker compose down -v postgres
 docker compose up -d postgres
 ```
 
-#### ❌ Performance lente
+#### Performance lente
 
 ```bash
 # Vérifier charge ressources
@@ -1202,37 +1193,37 @@ docker compose logs > logs_$(date +%Y%m%d_%H%M%S).txt
 
 ---
 
-## 🔐 Sécurité
+## Sécurité
 
 ### Bonnes Pratiques Appliquées
 
-✅ **Isolation Réseau** :
+**Isolation Réseau** :
 - Réseau Docker interne `pacs-network`
 - Seuls ports nécessaires exposés à l'hôte
 - Communication inter-services via noms DNS internes
 
-✅ **Credentials** :
+**Credentials** :
 - Variables dans `.env` (exclu `.gitignore`)
 - Pas de mots de passe hardcodés dans code
 - `.env.example` avec valeurs par défaut sanitisées
 
-✅ **Conteneurs** :
+**Conteneurs** :
 - Users non-root (UID 1000)
 - Volumes montés en lecture-seule quand possible
 - Health checks sur services critiques
 - Restart policy `unless-stopped`
 
-✅ **CORS** :
+**CORS** :
 - Origines autorisées limitées
 - Headers exposés minimaux
 - Credentials autorisés uniquement pour domaines de confiance
 
-✅ **HTTPS/TLS** (Production) :
+**HTTPS/TLS** (Production) :
 - Nginx avec certificats Let's Encrypt
 - Redirection HTTP → HTTPS automatique
 - HSTS activé (Strict-Transport-Security)
 
-✅ **Rate Limiting** :
+**Rate Limiting** :
 - 100 requêtes/minute par IP
 - Protection DDoS basique
 - Logs requêtes suspectes
@@ -1276,82 +1267,7 @@ async def get_patients():
 
 ---
 
-## 📋 FAQ
-
-### Q: Quelle est la différence entre DCM4CHEE et Orthanc ?
-
-**DCM4CHEE** :
-- ✅ Archive professionnel enterprise-grade
-- ✅ Gestion workflow avancée (HL7, MPPS)
-- ✅ Haute disponibilité (cluster, load balancing)
-- ❌ Configuration complexe
-- ❌ Consommation ressources élevée
-
-**Orthanc** :
-- ✅ Léger et rapide
-- ✅ Installation simple (Docker single-file)
-- ✅ API REST intuitive
-- ❌ Fonctionnalités enterprise limitées
-- ❌ Pas de cluster natif
-
-**Recommandation** : Orthanc pour R&D/formation, DCM4CHEE pour production hospitalière.
-
-### Q: Les données patients sont-elles sécurisées ?
-
-Oui :
-- ✅ Anonymisation XNAT conforme RGPD/HIPAA
-- ✅ Encryption at rest (volumes Docker chiffrés optionnel)
-- ✅ HTTPS/TLS en production
-- ✅ Audit trail de toutes les opérations
-- ✅ Accès restreint par authentification
-
-### Q: Puis-je ajouter un autre PACS ?
-
-Oui ! Architecture modulaire :
-1. Ajouter service dans `docker-compose.yml`
-2. Configurer endpoint dans `backend/config.py`
-3. Implémenter adapter dans `backend/services/pacs_adapter.py`
-4. Mettre à jour frontend pour afficher nouveau PACS
-
-### Q: Comment migrer vers production ?
-
-1. **Infrastructure** : Serveur dédié (16 GB RAM, 8 cores, 500 GB SSD)
-2. **Domaine** : Enregistrer domaine (ex: `pacs.hospital.com`)
-3. **SSL** : Certificat Let's Encrypt via Certbot
-4. **Nginx** : Configurer reverse proxy avec HTTPS
-5. **Backup** : Script cron quotidien PostgreSQL + volumes Docker
-6. **Monitoring** : Grafana alertes email/Slack
-7. **Firewall** : Ouvrir ports 80, 443 uniquement
-
-### Q: RT-STRUCT supporte quels formats ?
-
-**Import** :
-- ✅ DICOM RT-STRUCT (standard)
-- ✅ DICOM RT-DOSE
-- ✅ DICOM RT-PLAN
-
-**Export** :
-- ✅ NIfTI (`.nii.gz`) - Analyse ML
-- ✅ STL (`.stl`) - Impression 3D
-- ✅ JSON - Métadonnées
-- ✅ PNG/JPEG - Captures
-
-### Q: Combien de patients peut gérer le système ?
-
-**Capacité testée** :
-- ✅ 10,000 patients
-- ✅ 50,000 études
-- ✅ 5,000,000 images
-- ✅ 2 TB données DICOM
-
-**Limites** :
-- PostgreSQL : Optimisé jusqu'à 1M patients
-- Orthanc : Limité par RAM (1 MB par étude en cache)
-- DCM4CHEE : Scalable horizontalement (cluster)
-
----
-
-## 📚 Ressources Additionnelles
+## Ressources Additionnelles
 
 ### Documentation Officielle
 
@@ -1376,57 +1292,7 @@ Oui ! Architecture modulaire :
 
 ---
 
-## 📞 Support
-
-### Obtenir de l'Aide
-
-- 📧 **Email** : support@pacs-platform.local
-- 🐛 **GitHub Issues** : [Créer une issue](https://github.com/votre-username/pacs-multi-systemes/issues)
-- 💬 **Discord** : [Rejoindre le serveur](https://discord.gg/pacs-community)
-- 📖 **Documentation** : http://localhost:8000/docs (API)
-
-### Rapporter un Bug
-
-Utiliser le template suivant dans GitHub Issues :
-
-```markdown
-**Description du bug**
-[Description claire et concise]
-
-**Reproduction**
-1. Aller à '...'
-2. Cliquer sur '...'
-3. Voir erreur
-
-**Comportement attendu**
-[Ce qui devrait se passer]
-
-**Captures d'écran**
-[Si applicable]
-
-**Environnement**
-- OS: [Windows/Linux/macOS]
-- Docker version: [ex: 20.10.8]
-- Navigateur: [ex: Chrome 96]
-```
-
----
-
-## 📄 License
-
-**MIT License**
-
-Copyright (c) 2025 PACS Multi-Systèmes Platform
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
----
-
-## 🙏 Remerciements
+## Remerciements
 
 - **DCM4CHE Team** - Pour DCM4CHEE archive professionnel
 - **Sébastien Jodogne** - Créateur d'Orthanc PACS
@@ -1438,20 +1304,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 ---
 
-## 📊 Statistiques Projet
-
-![Docker Pulls](https://img.shields.io/docker/pulls/orthanc/orthanc?label=Orthanc%20pulls)
-![GitHub stars](https://img.shields.io/github/stars/votre-username/pacs-multi-systemes?style=social)
-![GitHub forks](https://img.shields.io/github/forks/votre-username/pacs-multi-systemes?style=social)
-![GitHub issues](https://img.shields.io/github/issues/votre-username/pacs-multi-systemes)
-![GitHub last commit](https://img.shields.io/github/last-commit/votre-username/pacs-multi-systemes)
-
----
-
 <div align="center">
 
-### 🏥 Créé avec ❤️ pour la radiologie moderne
+**Créé pour la radiologie moderne**
 
-**Plateforme PACS Multi-Systèmes** | [Documentation](http://localhost:8000/docs) | [Support](mailto:support@pacs-platform.local)
+**Plateforme PACS Multi-Systèmes** | [Documentation](http://localhost:8000/docs)
 
 </div>
